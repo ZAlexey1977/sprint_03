@@ -34,24 +34,28 @@ document.querySelector('.b-2').addEventListener('click', f02);
 let n_31 : number = 22;
 let n_32: number = 44;
 // тут объявляем max_3
-
+let max_3 :number;
 
 function f03 () : void {
-   
+   n_31 > n_32? max_3 = n_31:  max_3 = n_32;
+   console.log( max_3);
 }
 
 document.querySelector('.b-3').addEventListener('click', f03);
 
 
 // Task 04
-// Напишите функцию, f04, которая получает два ЧИСЛА из input.i-41 и input.i-41 и меньшее присваивает в переменную min_4.
+// Напишите функцию, f04, которая получает два ЧИСЛА из input.i-41 и input.i-42 и меньшее присваивает в переменную min_4.
 // Тип данных min_4 определите самостоятельно. Для проверки выведите min_4 в консоль.
 
 // тут объявляем min_4
-
+let min_4 : number;
 
 function f04 () : void {
-
+let num_1 : number = Number((<HTMLInputElement> document.querySelector('.i-41')).value);
+let num_2 : number = Number((<HTMLInputElement> document.querySelector('.i-42')).value);
+num_1 < num_2 ? min_4 = num_1 : min_4 = num_2;
+console.log(min_4);
 }
 
 document.querySelector('.b-4').addEventListener('click', f04);
@@ -64,10 +68,15 @@ document.querySelector('.b-4').addEventListener('click', f04);
 
 // тут объявляем sum_5
 // тут объявляем error_5
-
+let sum_5 : number;
+let error_5 : boolean = false;
 
 function f05 () : void {
-   
+   let num_1 = <HTMLInputElement> document.querySelector('.i-51');
+   let num_2 = <HTMLInputElement> document.querySelector('.i-52');
+   sum_5 = Number((num_1.value)) + Number((num_2.value));
+   sum_5 < 0 ? error_5 = true : error_5;
+   console.log(sum_5, error_5);
 }
 
 document.querySelector('.b-5').addEventListener('click', f05);
