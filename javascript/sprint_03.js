@@ -50,21 +50,39 @@ document.querySelector('.b-4').addEventListener('click', f04);
 let sum_5;
 let error_5 = false;
 function f05() {
-    let num_1 = document.querySelector('.i-51');
-    let num_2 = document.querySelector('.i-52');
-    sum_5 = Number((num_1.value)) + Number((num_2.value));
-    sum_5 < 0 ? error_5 = true : error_5;
-    console.log(sum_5, error_5);
+    let num_1 = Number(document.querySelector('.i-51').value);
+    let num_2 = Number(document.querySelector('.i-52').value);
+    if (!isNaN(num_1) && !isNaN(num_2)) {
+        sum_5 = Number((num_1)) + Number((num_2));
+        console.log(sum_5);
+    }
+    else {
+        error_5 = true;
+        console.log(error_5);
+    }
 }
 document.querySelector('.b-5').addEventListener('click', f05);
 // Task 06
 // Напишите функцию, f06, что проверяет что в input.i-61 и input.i-62 введены строки, которые можно привести к числам. 
-//При положительном результате проверки в переменную sum_6 кладет результат - сумму данных чисел, 
-//а в переменную error_6 кладем false, при отрицательном результате в переменную error_6 кладется значение true,
-//а в переменную sum_6 кладем 0. Типы данных определите самостоятельно. Переменную sum_6 выведите в .out-6. Переменную error_6 в консоль.
+// При положительном результате проверки в переменную sum_6 кладет результат - сумму данных чисел, 
+// а в переменную error_6 кладем false, при отрицательном результате в переменную error_6 кладется значение true,
+// а в переменную sum_6 кладем 0. Типы данных определите самостоятельно. Переменную sum_6 выведите в .out-6. Переменную error_6 в консоль.
 // тут объявляем sum_6
 // тут объявляем error_6
+let sum_6;
+let error_6 = false;
 function f06() {
+    let num_1 = Number(document.querySelector('.i-61').value);
+    let num_2 = Number(document.querySelector('.i-62').value);
+    if (!isNaN(num_1) && !isNaN(num_2)) {
+        sum_6 = num_1 + num_2;
+    }
+    else {
+        error_6 = true;
+        sum_6 = 0;
+    }
+    document.querySelector('.out-6').textContent = String(sum_6);
+    console.log(error_6);
 }
 document.querySelector('.b-6').addEventListener('click', f06);
 // Task 07
