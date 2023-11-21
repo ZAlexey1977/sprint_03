@@ -173,10 +173,17 @@ document.querySelector('.b-9').addEventListener('click', f09);
 //переменной res_10. Если checkbox выбран записывайте true, если нет - false. Выводите res_10 в .out-10.
 
 // тут объявляем res_10
-
+let res_10 : boolean = false;
 
 function f10 () : void {
-
+let checkbox = <HTMLInputElement> document.querySelector('.ch-10');
+if (checkbox.checked){
+  res_10 = true;
+  document.querySelector('.out-10').textContent = String(res_10);
+} else {
+  res_10 = false;
+  document.querySelector('.out-10').textContent = String(res_10);
+}
 }
 
 document.querySelector('.ch-10').addEventListener('change', f10);
@@ -187,9 +194,17 @@ document.querySelector('.ch-10').addEventListener('change', f10);
 // Если checkbox выбран записывайте в res_11 значение value, если нет - 0. Выводите res_11 в .out-11.
 
 // тут объявляем res_11
+let res_11 : number = 0;
 
 function f11 () : void {
-    
+  let checkbox = <HTMLInputElement> document.querySelector('.ch-11'); 
+  if (checkbox.checked){
+    res_11 = Number(checkbox.value);
+    document.querySelector('.out-11').textContent = String(res_11);
+  } else {
+    res_11 = 0;
+    document.querySelector('.out-11').textContent = String(res_11);
+  }
 }
 
 document.querySelector('.ch-11').addEventListener('change', f11);
@@ -200,10 +215,17 @@ document.querySelector('.ch-11').addEventListener('change', f11);
 // и если она равна 1 то делать checkbox.ch-12 состояние checked, если равна нулю сбрасывать состояние checked. 
 
 // тут объявляем res_12
-
+let res_12 : number = 0;
 
 function f12 () : void {
-   
+  let checkbox = <HTMLInputElement> document.querySelector('.ch-12');
+   if (res_12 == 1){
+    checkbox.checked = true;
+   }  
+
+   if (res_12 == 0){
+    checkbox.checked = false;
+   }
 }
 
 document.querySelector('.b-12').addEventListener('click', f12);
