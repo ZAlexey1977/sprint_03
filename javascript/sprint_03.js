@@ -89,21 +89,38 @@ document.querySelector('.b-6').addEventListener('click', f06);
 // Функция f07 получает строки из input.i-71 и input.i-72. В переменную max_7 функция должна записать большую из двух строк.
 // Прямым сравнением. Тип переменной max_7 задайте самостоятельно. Выведите переменную max_7 в .out-7.
 // тут объявляем max_7
+let max_7;
 function f07() {
+    let str_1 = String(document.querySelector('.i-71').value);
+    let str_2 = String(document.querySelector('.i-72').value);
+    str_1.length > str_2.length ? max_7 = str_1 : max_7 = str_2;
+    document.querySelector('.out-7').textContent = max_7;
 }
 document.querySelector('.b-7').addEventListener('click', f07);
 // Task 08
 // Функция f08 должна прочитать выбранное value из select.s-8 и записать значение в переменную val_8. 
 //Тип val_8 определите самостоятельно. Выведите val_8 в .out-8. 
 // тут объявляем val_8
+let val_8;
 function f08() {
+    val_8 = String(document.querySelector('select').value);
+    document.querySelector('.out-8').textContent = val_8;
 }
 document.querySelector('.b-8').addEventListener('click', f08);
 // Task 09
 // Создайте переменную val_9 и пропишите ей любое целое число от 2 до 6. Тип данных задайте самостоятельно. 
 //Напишите функцию f09, которая будучи запущена сделает option внутри select.s-9 с таким value selected. Значение val_9 выводите в .out-9.
 // тут объявляем val_9
+let val_9 = 3;
 function f09() {
+    let select = document.querySelector('.s-9');
+    for (let i = 0; i < select.length; i++) {
+        let option = select[i];
+        if (Number(option.getAttribute('value')) == val_9) {
+            document.querySelector('.out-9').textContent = option.textContent;
+            option.setAttribute('selected', 'selected');
+        }
+    }
 }
 document.querySelector('.b-9').addEventListener('click', f09);
 // //Task 10
