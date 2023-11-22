@@ -176,13 +176,23 @@ document.querySelector('.b-12').addEventListener('click', f12);
 // Функция f13 получает из input.i-13 число и выводит в .out-13 строку вида 43210 т.е. от введенного числа до нуля. Если ввели 5,
 // то вывод должен быть 543210. 
 function f13() {
+    let out = '';
+    let num = Number(document.querySelector('.i-13').value);
+    for (let i = num; i >= 0; i--) {
+        out += String(i);
+    }
+    document.querySelector('.out-13').textContent = out;
 }
 document.querySelector('.b-13').addEventListener('click', f13);
 // Task 14
 // Функция f14 получает из input.i-14 число и присваивает переменной res_14 true если введенное число является четным, false если не четным.
 // Переменную res_14 выведите в .out-14.
 // тут объявляем res_14
+let res_14;
 function f14() {
+    let num = Number(document.querySelector('.i-14').value);
+    num % 2 == 0 ? res_14 = true : res_14 = false;
+    document.querySelector('.out-14').textContent = String(res_14);
 }
 document.querySelector('.b-14').addEventListener('click', f14);
 // Task 15

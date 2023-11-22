@@ -236,8 +236,12 @@ document.querySelector('.b-12').addEventListener('click', f12);
 // то вывод должен быть 543210. 
 
 function f13 () : void {
-    
-
+  let out : string = '';
+  let num : number = Number((<HTMLInputElement> document.querySelector('.i-13')).value);
+for (let i = num; i >= 0; i--){
+  out += String(i);
+}
+document.querySelector('.out-13').textContent = out;
 }
 
 document.querySelector('.b-13').addEventListener('click', f13);
@@ -247,12 +251,13 @@ document.querySelector('.b-13').addEventListener('click', f13);
 // Переменную res_14 выведите в .out-14.
 
 // тут объявляем res_14
-
-
+let res_14 : boolean;
+  
 function f14 () : void {
-    
-
-}
+    let num : number = Number((<HTMLInputElement> document.querySelector('.i-14')).value);
+    num % 2 == 0 ? res_14 = true : res_14 = false; 
+    document.querySelector('.out-14').textContent = String(res_14);
+  }
 
 document.querySelector('.b-14').addEventListener('click', f14);
 
