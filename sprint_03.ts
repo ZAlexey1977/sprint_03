@@ -268,10 +268,19 @@ document.querySelector('.b-14').addEventListener('click', f14);
 
 // тут объявляем s_15
 // тут объявляем res_15
-
+let s_15 : string = 'cdcdbdcsd';
+let res_15 : number;
 
 function f15 () : void {
-
+  let count : number = 0;
+  for (let i = 0; i < s_15.length; i++){
+    if (s_15[i] == 'c'){
+      count += 1;
+    }
+    res_15 = count;
+  }
+  document.querySelector('.out-151').textContent = s_15;
+  document.querySelector('.out-152').textContent = String(res_15);
 }
 
 document.querySelector('.b-15').addEventListener('click', f15);
@@ -283,10 +292,14 @@ document.querySelector('.b-15').addEventListener('click', f15);
 // Выводите переменную res_16 в .out-16. 
 
 // тут объявляем res_16
-
+let res_16 : number;
 
 function f16 () : void {
- 
+ let input_16 = <HTMLInputElement> document.querySelector('.i-16');
+ let out : string = '';
+ out += input_16.value;
+ res_16 = Number(out.length);
+ document.querySelector('.out-16').textContent = String(res_16);
 }
 
 document.querySelector('.i-16').addEventListener('input', f16);

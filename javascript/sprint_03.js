@@ -200,14 +200,31 @@ document.querySelector('.b-14').addEventListener('click', f14);
 //Количество присваивать в переменную res_15. Функция должна выводить s_15 в .out-151 и res_15 в .out-152.
 // тут объявляем s_15
 // тут объявляем res_15
+let s_15 = 'cdcdbdcsd';
+let res_15;
 function f15() {
+    let count = 0;
+    for (let i = 0; i < s_15.length; i++) {
+        if (s_15[i] == 'c') {
+            count += 1;
+        }
+        res_15 = count;
+    }
+    document.querySelector('.out-151').textContent = s_15;
+    document.querySelector('.out-152').textContent = String(res_15);
 }
 document.querySelector('.b-15').addEventListener('click', f15);
 // Task 16
 // Создан элемент input.i-16. При вводе символов в него выводите количество введенных символов в переменную res_16.
 // Выводите переменную res_16 в .out-16. 
 // тут объявляем res_16
+let res_16;
 function f16() {
+    let input_16 = document.querySelector('.i-16');
+    let out = '';
+    out += input_16.value;
+    res_16 = Number(out.length);
+    document.querySelector('.out-16').textContent = String(res_16);
 }
 document.querySelector('.i-16').addEventListener('input', f16);
 // Task 17
