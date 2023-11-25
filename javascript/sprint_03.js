@@ -254,7 +254,21 @@ document.querySelector('.b-17').addEventListener('click', f17);
 // Т.е. когда count = 5 строка выглядит '000001'
 // Выведите count_18 в .out-181 и s_18 в .out-182
 // тут объявляем 
+let s_18 = '10000';
+let count_18 = 2;
 function f18() {
+    let out = '';
+    for (let i = 0; i < s_18.length; i++) {
+        if (i == count_18) {
+            console.log(s_18[i]);
+            out += '1';
+        }
+        else {
+            out += '0';
+        }
+    }
+    document.querySelector('.out-181').textContent = String(count_18);
+    document.querySelector('.out-182').textContent = out;
 }
 document.querySelector('.b-18').addEventListener('click', f18);
 // Task 19
@@ -262,7 +276,19 @@ document.querySelector('.b-18').addEventListener('click', f18);
 // а функция генерирует строку от 5 до 0 и заменяет четные числа на x. Разделитель подчеркивание. 
 //Число функция берет из input.i-19. Выведите строку в .out-19.
 // тут объявляем s_19
+let s_19;
 function f19() {
+    let input19 = document.querySelector('.i-19');
+    let out = '';
+    for (let i = Number(input19.value); i > 0; i--) {
+        if (i % 2 == 0) {
+            out += 'x_';
+        }
+        else {
+            out += `${i}_`;
+        }
+    }
+    document.querySelector('.out-19').textContent = out;
 }
 document.querySelector('.b-19').addEventListener('click', f19);
 // Тask 20
