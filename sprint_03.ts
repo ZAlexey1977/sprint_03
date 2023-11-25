@@ -387,12 +387,18 @@ document.querySelector('.b-19').addEventListener('click', f19);
 // искомая сумма 5 + 4 + 3 + 2 + 1. Сумма присваивается в s_20. Выведите s_20 в .out-20.
 
 // тут объявляем s_20
-
+let s_20 : number = 0;
 
 
 function f20 () : void {
-   
 
+  let input20 = <HTMLInputElement> document.querySelector('.i-20');
+  
+  for (let i = Number(input20.value); i > 0; i--){
+    s_20 += i;
+  }
+
+  document.querySelector('.out-20').textContent = String(s_20);
 }
 
 document.querySelector('.b-20').addEventListener('click', f20);

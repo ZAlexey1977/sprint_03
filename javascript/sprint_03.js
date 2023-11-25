@@ -296,7 +296,13 @@ document.querySelector('.b-19').addEventListener('click', f19);
 //которая получает число с .i-20 и считает сумму ряда чисел от введеного до нуля. Например введено 5,
 // искомая сумма 5 + 4 + 3 + 2 + 1. Сумма присваивается в s_20. Выведите s_20 в .out-20.
 // тут объявляем s_20
+let s_20 = 0;
 function f20() {
+    let input20 = document.querySelector('.i-20');
+    for (let i = Number(input20.value); i > 0; i--) {
+        s_20 += i;
+    }
+    document.querySelector('.out-20').textContent = String(s_20);
 }
 document.querySelector('.b-20').addEventListener('click', f20);
 //# sourceMappingURL=sprint_03.js.map
