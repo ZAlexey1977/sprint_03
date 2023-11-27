@@ -99,8 +99,8 @@ let sum_6 : number;
 let error_6 :boolean = false;
 
 function f06 () : void {
-  let num_1 : number = Number((<HTMLInputElement> document.querySelector('.i-61')).value);
-  let num_2 : number = Number((<HTMLInputElement> document.querySelector('.i-62')).value);
+  let num_1 : number = parseInt((<HTMLInputElement> document.querySelector('.i-61')).value);
+  let num_2 : number = parseInt((<HTMLInputElement> document.querySelector('.i-62')).value);
   if (!isNaN(num_1) && !isNaN(num_2)){
     sum_6 = num_1 + num_2;
   } else {
@@ -124,7 +124,7 @@ let max_7 : string;
 function f07 () : void {
   let str_1 : string = String((<HTMLInputElement> document.querySelector('.i-71')).value);
   let str_2 : string = String((<HTMLInputElement> document.querySelector('.i-72')).value);
-  str_1.length > str_2.length ? max_7 = str_1 : max_7 = str_2;
+  str_1.length >= str_2.length ? max_7 = str_1 : max_7 = str_2;
  
   document.querySelector('.out-7').textContent = max_7;
 }
@@ -149,17 +149,19 @@ document.querySelector('.b-8').addEventListener('click', f08);
 
 // Task 09
 // Создайте переменную val_9 и пропишите ей любое целое число от 2 до 6. Тип данных задайте самостоятельно. 
-//Напишите функцию f09, которая будучи запущена сделает option внутри select.s-9 с таким value selected. Значение val_9 выводите в .out-9.
+//Напишите функцию f09, которая будучи запущена сделает option внутри select.s-9 с таким value selected. 
+//Значение val_9 выводите в .out-9.
 
 // тут объявляем val_9
-let val_9 : number = 3;
+let val_9 : number = 5;
 
 function f09 () : void {
-let select = <HTMLSelectElement> document.querySelector('.s-9'); 
+let select = <HTMLSelectElement> document.querySelector('.s-9');
+
 for (let i = 0; i < select.length; i++) {
- let option = select[i];
+ let option = select[i] as HTMLOptionElement;
  if (Number(option.getAttribute('value')) == val_9){
-  document.querySelector('.out-9').textContent = option.textContent;
+  document.querySelector('.out-9').textContent = option.value;
   option.setAttribute('selected', 'selected'); 
  }  
 }
@@ -337,8 +339,8 @@ document.querySelector('.b-17').addEventListener('click', f17);
 // Выведите count_18 в .out-181 и s_18 в .out-182
 
 // тут объявляем 
-let s_18 : string = '10000';
-let count_18 : number = 2;
+let s_18 : string = '100000';
+let count_18 : number = 0;
 
 function f18 () : void {
    let out : string = '';
@@ -352,6 +354,7 @@ for (let i = 0; i < s_18.length; i++){
 }   
 document.querySelector('.out-181').textContent = String(count_18);
 document.querySelector('.out-182').textContent = out;
+count_18++;
 }
 
 document.querySelector('.b-18').addEventListener('click', f18);
@@ -391,7 +394,7 @@ let s_20 : number = 0;
 
 
 function f20 () : void {
-
+  s_20 = 0;
   let input20 = <HTMLInputElement> document.querySelector('.i-20');
   
   for (let i = Number(input20.value); i > 0; i--){
